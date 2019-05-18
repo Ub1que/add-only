@@ -1,6 +1,7 @@
 import { Range, TextEditor, TextEditorEdit } from "vscode";
 
 async function addOnly(
+  // @ts-ignore
   textEditor: TextEditor,
   edit: TextEditorEdit,
   tokenRange: Range
@@ -9,6 +10,7 @@ async function addOnly(
 }
 
 async function removeOnly(
+  // @ts-ignore
   textEditor: TextEditor,
   edit: TextEditorEdit,
   tokenRange: Range
