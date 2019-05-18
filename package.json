@@ -1,0 +1,79 @@
+{
+  "name": "add-only",
+  "displayName": "Add Only",
+  "description": "Add only to tests easily using CodeLens",
+  "version": "1.0.0",
+  "publisher": "ub1que",
+  "engines": {
+    "vscode": "^1.18.0"
+  },
+  "license": "MIT",
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "testrunner",
+    "mocha",
+    "jest",
+    "test",
+    "unit"
+  ],
+  "preview": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ub1que/add-only"
+  },
+  "icon": "ressources/icon.png",
+  "main": "./out/extension",
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "add-only.add.only",
+        "title": "Add only"
+      },
+      {
+        "command": "add-only.remove.only",
+        "title": "Remove only"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc --noUnusedParameters --noUnusedLocals -p ./",
+    "watch": "tsc -watch  --noUnusedParameters --noUnusedLocals  -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "lint": "tslint -c tslint.json src/**/*.ts",
+    "format": "prettier --write src/**/*.{ts,json} package.json",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{ts,}": [
+      "tslint -c tslint.json",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.43",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "prettier": "1.13.7",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.13.0",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/parser": "^7.0.0-beta.54",
+    "@babel/plugin-syntax-jsx": "^7.0.0-beta.54",
+    "@babel/plugin-syntax-typescript": "^7.0.0-beta.54"
+  }
+}
