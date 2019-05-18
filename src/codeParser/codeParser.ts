@@ -14,10 +14,9 @@ function codeParser(sourceCode: any) {
       let removeTokenNext = false;
 
       if (
-        addTokens.includes(value) ||
-        (removeTokens.includes(value) &&
-          type.label === "name" &&
-          !!ast.tokens[index + 1].type.startsExpr)
+        (addTokens.includes(value) || removeTokens.includes(value)) &&
+        type.label === "name" &&
+        !!ast.tokens[index + 1].type.startsExpr
       ) {
         if (removeTokens.includes(ast.tokens[index + 2].value)) {
           removeTokenNext = true;
