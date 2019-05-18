@@ -4,6 +4,10 @@ All notable changes to the "add-only-to-test" extension will be documented in th
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [1.0.1]
+
+- parser fixed
+
+## [1.0.0]
 
 - Initial release
