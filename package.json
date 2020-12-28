@@ -2,7 +2,7 @@
   "name": "add-only",
   "displayName": "Add Only",
   "description": "Add only to tests easily using CodeLens",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "ub1que",
   "engines": {
     "vscode": "^1.18.0"
@@ -29,6 +29,27 @@
     "*"
   ],
   "contributes": {
+    "configuration": {
+      "title": "AddOnly",
+      "properties": {
+        "AddOnly.templates": {
+          "type": "array",
+          "default": [
+            {
+              "name": "it",
+              "insertAfterPriority": [
+                "concurrent",
+                "it"
+              ],
+              "decline": [
+                "skip"
+              ]
+            }
+          ],
+          "description": "Templates in order to control behavior"
+        }
+      }
+    },
     "commands": [
       {
         "command": "add-only.add.only",
@@ -60,20 +81,20 @@
     ]
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.42",
-    "@types/node": "^7.0.43",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.0",
-    "prettier": "1.13.7",
-    "tslint": "^5.10.0",
-    "tslint-config-prettier": "^1.13.0",
-    "typescript": "^2.6.1",
-    "vscode": "^1.1.6"
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "prettier": "2.2.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.1.3",
+    "vscode": "^1.1.37"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-beta.54",
-    "@babel/parser": "^7.0.0-beta.54",
-    "@babel/plugin-syntax-jsx": "^7.0.0-beta.54",
-    "@babel/plugin-syntax-typescript": "^7.0.0-beta.54"
+    "@babel/core": "^7.12.10",
+    "@babel/parser": "^7.12.11",
+    "@babel/plugin-syntax-jsx": "^7.12.1",
+    "@babel/plugin-syntax-typescript": "^7.12.1",
+    "@babel/traverse": "^7.12.12",
+    "@babel/types": "^7.12.12"
   }
 }
