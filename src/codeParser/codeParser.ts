@@ -16,10 +16,10 @@ export default function parseCodeForLocations(sourceCode: any) {
   const gatherMembers = (acc, member) => {
     if (t.isMemberExpression(member)){
       if (t.isIdentifier(member.property)){
-        acc = [...acc, {name: member.property.name, loc: member.property.loc}]
+        acc = [...acc, {name: member.property.name, type: 'property', loc: member.property.loc}]
 
         if (t.isIdentifier(member.object)){
-          acc = [...acc, {name: member.object.name, loc: member.object.loc}]
+          acc = [...acc, {name: member.object.name, type: 'object', loc: member.object.loc}]
           return gatherMembers(acc, member.object)
         }
 
@@ -40,6 +40,12 @@ export default function parseCodeForLocations(sourceCode: any) {
       
       // skip
       if (decline){
+        return null;
+      }
+
+      // also skip cases where name (test, describe) is a property e.g. /hello/.test('hello')
+      const propertyMember = members.find(member =>  member.name === template.name && member.type === 'property')
+      if (propertyMember){
         return null;
       }
 
