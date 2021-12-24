@@ -2,7 +2,7 @@
   "name": "add-only",
   "displayName": "Add Only",
   "description": "Add only to tests easily using CodeLens",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "ub1que",
   "engines": {
     "vscode": "^1.18.0"
