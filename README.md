@@ -8,6 +8,13 @@ Add and remove `.only` near `describe`, `test` easily using CodeLens
 
 ## Options
 
+### Basic
+
+`AddOnly.removeAllOnlyButton`
+controls the presence of **Remove all only** button in status bar (default is true)
+
+### Templates
+
 In order to give user control over extension behavior, there is `AddOnly.templates` user setting.
 Templates is an array where each template is an object which contains **name**, **insertAfterPriority** and **decline** properties.
 

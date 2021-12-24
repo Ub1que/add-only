@@ -47,17 +47,18 @@
             }
           ],
           "description": "Templates in order to control behavior"
+        },
+        "AddOnly.removeAllOnlyButton": {
+          "type": "boolean",
+          "default": true,
+          "description": "Presence of 'Remove all only' button in status bar"
         }
       }
     },
     "commands": [
       {
-        "command": "add-only.add.only",
-        "title": "Add only"
-      },
-      {
-        "command": "add-only.remove.only",
-        "title": "Remove only"
+        "command": "add-only.remove.all.only",
+        "title": "Add only: Remove all only"
       }
     ]
   },

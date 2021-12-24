@@ -1,4 +1,5 @@
 import { Range, TextEditor, TextEditorEdit } from "vscode";
+import { state } from '../providers/OnlyCodeLensProvider'
 
 async function addOnly(
   // @ts-ignore
@@ -18,4 +19,19 @@ async function removeOnly(
   edit.delete(tokenRange);
 }
 
-export { addOnly, removeOnly };
+async function removeAllOnly(
+  // @ts-ignore
+  textEditor: TextEditor,
+  edit: TextEditorEdit,
+) {
+  state.removeCodeLenses.forEach(codeLens => {
+    const tokenRange = codeLens?.command?.arguments?.[0];
+
+    if (tokenRange){
+      edit.delete(tokenRange)
+    }
+
+  })
+}
+
+export { addOnly, removeOnly, removeAllOnly };
